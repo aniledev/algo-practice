@@ -36,3 +36,20 @@ function adjacentElementsProduct(inputArray) {
   }
   return maxProduct;
 }
+
+function shapeArea(n) {
+  // 1, 1
+  // 2, 5
+  // 3, 13
+  // 4, 25
+
+  // base case
+  if (n == 1) {
+    return 1;
+  }
+
+  //recursive case
+  if (n > 1) {
+    return shapeArea(n - 1) + (n - 1) * 4;
+  }
+}
