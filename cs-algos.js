@@ -53,3 +53,24 @@ function shapeArea(n) {
     return shapeArea(n - 1) + (n - 1) * 4;
   }
 }
+
+function makeArrayConsecutive2(statues) {
+  // sort the array from smallest to largest using sort
+  let output = [];
+  let sorted = statues.sort((a, b) => a - b);
+  // set a min value and a max value to an variable
+  const min = sorted[0];
+  const max = sorted[sorted.length - 1];
+
+  // in the new sorted array check if the array has every value from min to max
+
+  for (i = 1; i < max - min; i++) {
+    if (!sorted.includes(min + i)) {
+      // if not, push the value to a new array
+      output.push(min + 1);
+      console.log(output);
+    }
+  }
+  // return the length of the new array
+  return output.length;
+}
